@@ -8,7 +8,7 @@ const Header = () => {
     <header className={styles.header}>
       {/* <Logo className={styles.logo}/> */}
       <h2 className={styles.logo}>
-        <Link to='/'>Schulte.</Link>
+        <Link to="/">Schulte.</Link>
       </h2>
       <nav className={styles.navbar}>
         <ul className={styles.navlinks}>
@@ -23,7 +23,9 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <button>Logout</button>
+      <Link to="/game">
+        <button>Training</button>
+      </Link>
     </header>
   );
 };

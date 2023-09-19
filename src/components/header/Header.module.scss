@@ -1,0 +1,55 @@
+.header li a button {
+  font-weight: 400;
+  font-size: 16px;
+  color: #2e2e2e;
+  text-decoration: none;
+}
+
+.header {
+  height: 72px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+
+  >h2 a {
+    text-decoration: none;
+    color: #2e2e2e;
+  }
+
+  .logo {
+    cursor: pointer;
+    margin-right: auto;
+  }
+  .navbar {
+    .navlinks {
+      list-style: none;
+    }
+    .navlinks li {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0 20px;
+      > a {
+        text-decoration: none;
+        color: #2e2e2e;
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+          color: #9fc0de;
+        }
+      }
+    }
+  }
+  button {
+    margin-left: 20px;
+    padding: 9px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #c5ddf4;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: #9fc0de;
+    }
+  }
+}

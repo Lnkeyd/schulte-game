@@ -1,0 +1,15 @@
+.table {
+    display: grid;
+    grid-template-columns: repeat(5, 80px);
+    grid-template-rows: repeat(5, 80px);
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 900;
+    background-color: #F3FBFF;
+    border: 1px solid #878787;
+}

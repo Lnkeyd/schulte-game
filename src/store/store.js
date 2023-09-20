@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import settings from './settingsSlice'
+import settingsReducer from './settingsSlice'
 
-export default configureStore({
+export const store = configureStore({
   reducer: {
     settings: settingsReducer,
   },

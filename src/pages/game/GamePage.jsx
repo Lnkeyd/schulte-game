@@ -4,9 +4,19 @@ import Timer from "../../components/timer/Timer";
 import Table from "../../components/table/Table";
 import styles from "./GamePage.module.scss";
 import { useNavigate } from "react-router";
-import dayjs from "dayjs";
+import { useDispatch } from "react-redux";
+import { store } from "../../store/store";
+import { initLocalStorageSettings } from "../../store/settingsSlice";
 
 const GamePage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(initLocalStorageSettings());
+  }, []);
+
+  const { settings } = store.getState();
+
   const navigate = useNavigate();
   let [symbol, setSymbol] = useState(1);
   let [startDate, setStartDate] = useState(Date.now());
@@ -17,13 +27,13 @@ const GamePage = () => {
 
       const timeSpent = endDate - startDate;
 
-      const LS = localStorage.getItem("Statistics")
+      const LS = localStorage.getItem("Statistics");
       if (LS) {
-        const arr = JSON.parse(LS)
+        const arr = JSON.parse(LS);
 
-        localStorage.setItem("Statistics", JSON.stringify([...arr, timeSpent]))
+        localStorage.setItem("Statistics", JSON.stringify([...arr, timeSpent]));
       } else {
-        const arr = [timeSpent]
+        const arr = [timeSpent];
         localStorage.setItem("Statistics", JSON.stringify(arr));
       }
 
@@ -32,8 +42,8 @@ const GamePage = () => {
   }, [symbol]);
 
   function handleSpaceInput(e) {
-    if (e.key === ' ') {
-      setSymbol((symbol) => symbol + 1)
+    if (e.key === " ") {
+      setSymbol((symbol) => symbol + 1);
     }
   }
 
@@ -54,7 +64,12 @@ const GamePage = () => {
 
         <Table />
 
-        <button className={styles.button} onClick={(e) => setSymbol((symbol) => symbol + 1)}>Found</button>
+        <button
+          className={styles.button}
+          onClick={(e) => setSymbol((symbol) => symbol + 1)}
+        >
+          Found
+        </button>
       </div>
     </Layout>
   );

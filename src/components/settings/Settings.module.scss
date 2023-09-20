@@ -1,0 +1,53 @@
+@use '../../UI/mixins/buttons' as buttons;
+@import "../../UI/variables/colors";
+
+.form {
+  max-width: 580px;
+  width: 100%;
+  height: 580px;
+  padding: 40px;
+  border-radius: 0.5rem;
+  background-color: $lightest-color;
+
+  > h2 {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+
+  .flexWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+
+  .option {
+    margin-top: 20px;
+    > label {
+      font-weight: 900;
+      margin-bottom: 40px;
+    }
+
+    .dimension {
+        display: flex;
+        justify-content: space-between;
+        > li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    >ul {
+        margin-top: 8px;
+        >li {
+            list-style: none;
+        }
+    }
+  }
+  >button {
+    @include buttons.button-main;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}

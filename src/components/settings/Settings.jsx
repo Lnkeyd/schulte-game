@@ -40,6 +40,7 @@ const Settings = () => {
             <li key={index}>
               <label>{item.name}</label>
               <input
+                className={styles.inputDimension}
                 onChange={(e) => dispatch(updateTableDimension(item.name))}
                 type="radio"
                 name="table-dimension"

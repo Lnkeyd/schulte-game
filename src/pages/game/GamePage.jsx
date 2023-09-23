@@ -4,8 +4,7 @@ import Timer from "../../components/timer/Timer";
 import Table from "../../components/table/Table";
 import styles from "./GamePage.module.scss";
 import { useNavigate } from "react-router";
-import { useDispatch } from "react-redux";
-import { store } from "../../store/store";
+import { useDispatch, useSelector } from "react-redux";
 import { initLocalStorageSettings } from "../../store/settingsSlice";
 
 const GamePage = () => {
@@ -13,12 +12,15 @@ const GamePage = () => {
 
   useEffect(() => {
     dispatch(initLocalStorageSettings());
+  // eslint-disable-next-line
   }, []);
 
-  const { settings } = store.getState();
+  const settings = useSelector(state => state.settings)
+  console.log(settings)
 
   const navigate = useNavigate();
   let [symbol, setSymbol] = useState(1);
+  // eslint-disable-next-line
   let [startDate, setStartDate] = useState(Date.now());
 
   useEffect(() => {
@@ -39,6 +41,7 @@ const GamePage = () => {
 
       navigate("/results");
     }
+  // eslint-disable-next-line
   }, [symbol]);
 
   function handleSpaceInput(e) {

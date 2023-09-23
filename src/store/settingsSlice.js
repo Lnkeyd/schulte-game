@@ -2,14 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const init = {
   tableDimension: [
-    { name: "3 x 3", active: false },
-    { name: "4 x 4", active: false },
-    { name: "5 x 5", active: true },
-    { name: "6 x 6", active: false },
-    { name: "7 x 7", active: false },
-    { name: "8 x 8", active: false },
-    { name: "9 x 9", active: false },
-    { name: "10 x 10", active: false },
+    { name: "3 x 3", active: false, value: 3 },
+    { name: "4 x 4", active: false, value: 4 },
+    { name: "5 x 5", active: true, value: 5 },
+    { name: "6 x 6", active: false, value: 6 },
+    { name: "7 x 7", active: false, value: 7 },
+    { name: "8 x 8", active: false, value: 8 },
+    { name: "9 x 9", active: false, value: 9 },
+    { name: "10 x 10", active: false, value: 10 },
   ],
   clickOnCeils: false,
   shuffleOnClick: true,

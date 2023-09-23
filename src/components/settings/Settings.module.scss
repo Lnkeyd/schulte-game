@@ -1,6 +1,14 @@
 @use '../../UI/mixins/buttons' as buttons;
 @import "../../UI/variables/colors";
 
+input {
+  cursor: pointer;
+}
+
+input:not(.inputDimension) {
+  margin-left: 10px;
+}
+
 .form {
   max-width: 580px;
   width: 100%;
